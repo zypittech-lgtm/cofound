@@ -18,7 +18,18 @@ st.set_page_config(
     page_title="Zypit Cofounder Dashboard",
     layout="wide"
 )
+PASSWORD = "zypitisthebest"
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
 
+if not st.session_state.authenticated:
+    password_input = st.text_input("Enter password", type="password")
+
+    if password_input == PASSWORD:
+        st.session_state.authenticated = True
+        st.rerun()
+    else:
+        st.stop()
 st.title("Zypit Cofounder Dashboard")
 
 # =========================
@@ -195,3 +206,5 @@ if creator_details:
         st.write("**Content Link:** Not available")
 else:
     st.warning("No details found for the selected creator.")
+
+PASSWORD = "mypassword123"
