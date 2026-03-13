@@ -1,4 +1,5 @@
 streamlit
-sqlalchemy
+pandas
 requests
-psycopg2
+psycopg2-binary
+sqlalchemy
